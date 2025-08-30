@@ -8,22 +8,28 @@ Gem::Specification.new do |spec|
   spec.authors = ["mrmalvi"]
   spec.email = ["malviyak00@gmail.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.required_ruby_version = ">= 3.2.0"
+  spec.summary       = "Lightweight ActiveRecord audit logger with JSON logs"
+  spec.description   = "Langda gem provides simple JSON audit logs for ActiveRecord create/update/destroy actions."
+  spec.homepage      = "https://github.com/yourusername/langda"
+  spec.license       = "MIT"
+  spec.required_ruby_version = ">= 2.7.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/mrmalvi/langda"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   gemspec = File.basename(__FILE__)
+  # spec.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
+  #   ls.readlines("\x0", chomp: true).reject do |f|
+  #     (f == gemspec) ||
+  #       f.start_with?(*%w[bin/ Gemfile .gitignore])
+  #   end
+  # end
   spec.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
     ls.readlines("\x0", chomp: true).reject do |f|
-      (f == gemspec) ||
-        f.start_with?(*%w[bin/ Gemfile .gitignore])
+      f == gemspec || f.end_with?('.gem') || f.start_with?(*%w[bin/ Gemfile .gitignore .rspec spec/])
     end
   end
   spec.bindir = "exe"
