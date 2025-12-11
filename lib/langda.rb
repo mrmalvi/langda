@@ -1,17 +1,15 @@
-# frozen_string_literal: true
-
-require "langda/version"
-require "langda/config"
-require "langda/model"
-require "langda/railtie" if defined?(Rails)
+require "langda/logger"
 
 module Langda
   class << self
-    attr_accessor :config
+    attr_accessor :enabled, :threshold_ms
   end
 
-  def self.configure
-    self.config ||= Config.new
-    yield(config)
+  self.enabled = true
+  self.threshold_ms = 2.0
+
+  def self.enabled?
+    !!enabled
   end
 end
+require "langda/patches"
