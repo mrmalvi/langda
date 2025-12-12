@@ -1,4 +1,3 @@
-require "langda/logger"
 
 module Langda
   class << self
