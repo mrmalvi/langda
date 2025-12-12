@@ -1,10 +1,7 @@
 PATH
   remote: .
   specs:
-    langda (0.1.0)
-      debug
-      logger
-      rails
+    langda (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -90,9 +87,6 @@ GEM
     connection_pool (3.0.2)
     crass (1.0.6)
     date (3.5.1)
-    debug (1.11.0)
-      irb (~> 1.10)
-      reline (>= 0.3.8)
     drb (2.2.3)
     erb (6.0.0)
     erubi (1.13.1)
@@ -225,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   irb
   langda!
+  rails
   rake (~> 13.0)
 
 BUNDLED WITH
