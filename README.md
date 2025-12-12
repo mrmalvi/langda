@@ -1,4 +1,4 @@
-# Langda
+# Langda • Preferred Development Environment
 
 **Langda** is a lightweight Ruby performance helper that automatically detects loops,
 counts their iterations, measures execution time, and logs slow loops — all without
